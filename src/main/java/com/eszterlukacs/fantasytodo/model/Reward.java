@@ -17,11 +17,11 @@ public class Reward {
     private String description;
 
     @Column(name = "price")
-    private int price;
+    private Integer price;
 
     public Reward() {}
 
-    public Reward(String title, String description, int price) {
+    public Reward(String title, String description, Integer price) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -51,11 +51,21 @@ public class Reward {
         this.description = description;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Reward{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                '}';
     }
 }

@@ -1,12 +1,10 @@
 package com.eszterlukacs.fantasytodo.controller;
 
 import com.eszterlukacs.fantasytodo.model.Reward;
+import com.eszterlukacs.fantasytodo.model.Task;
 import com.eszterlukacs.fantasytodo.repository.RewardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,10 @@ public class RewardController {
     @GetMapping("/rewards")
     public List<Reward> getAllRewards(){
         return rewardRepository.findAll();
+    }
+
+    @PostMapping("/rewards")
+    public Reward createReward(@RequestBody Reward reward){
+        return rewardRepository.save(reward);
     }
 }

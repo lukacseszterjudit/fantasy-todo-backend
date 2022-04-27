@@ -16,11 +16,15 @@ public class Task {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "goldEarned")
+    private Integer goldEarned;
+
     public Task() {}
 
-    public Task(String title, String description) {
+    public Task(String title, String description, Integer goldEarned) {
         this.title = title;
         this.description = description;
+        this.goldEarned = goldEarned;
     }
 
     public long getId() {
@@ -45,5 +49,13 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getGoldEarned() {
+        return goldEarned;
+    }
+
+    public void setGoldEarned(Integer goldEarned) {
+        this.goldEarned = goldEarned;
     }
 }
