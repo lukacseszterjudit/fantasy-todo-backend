@@ -58,4 +58,14 @@ public class Task {
     public void setGoldEarned(Integer goldEarned) {
         this.goldEarned = goldEarned;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", goldEarned=" + goldEarned +
+                '}';
+    }
 }
